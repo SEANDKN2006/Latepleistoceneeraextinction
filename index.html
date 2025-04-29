@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Late Pleistocene - Home</title>
+    <style>
+        :root {
+            --earth-brown: #8B4513;
+            --transparent: 00FFFFFF;
+            --dark-cave: #333333;
+            --fossil-tan: #D2B48C;
+            --extinct-red: #8B0000;
+        }
+        
+        body {
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--ice-blue);
+            color: var(--dark-cave);
+            background-image: url('https://creator.nightcafe.studio/jobs/fCD3iuPR6QLGolJbBwHu/fCD3iuPR6QLGolJbBwHu--1--8hiug.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+        }
+        
+        .overlay {
+            background-color: rgba(255, 255, 255, 0.85);
+            min-height: 100vh;
+        }
+        
+     header {
+        background-image: url('https://i0.wp.com/www.christopherxjjensen.com/wp-content/uploads/2010/06/LatePleist-01.jpg?resize=372%2C125');
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        color: white;
+        padding: 2rem 1rem;
+        text-align: center;
+        border-bottom: 5px solid var(--fossil-tan);
+    }
+    
+    header::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(139, 69, 19, 0.7); /* earth-brown with transparency */
+        z-index: 0;
+    }
+    
+    header h1, header p {
+        position: relative;
+        z-index: 1;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    }
+        
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: var(--dark-cave);
+            padding: 0.5rem;
+            flex-wrap: wrap;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            margin: 0 0.5rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            background-color: var(--earth-brown);
+        }
+        
+        nav a:hover {
+            background-color: var(--fossil-tan);
+            color: var(--dark-cave);
+            transform: translateY(-3px);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 2rem;
+            background-color: rgba(210, 180, 140, 0.7);
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+        
+        .hero img {
+            max-width: 100%;
+            border-radius: 8px;
+            border: 5px solid var(--earth-brown);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        
+        .content-section {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            border-left: 5px solid var(--earth-brown);
+        }
+        
+        h2 {
+            color: var(--earth-brown);
+            border-bottom: 2px dashed var(--earth-brown);
+            padding-bottom: 0.5rem;
+        }
+        
+        .image-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .gallery-item {
+            flex: 1 1 300px;
+            max-width: 100%;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 3px solid var(--fossil-tan);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item img:hover {
+            transform: scale(1.05);
+        }
+        
+        .gallery-item p {
+            text-align: center;
+            font-style: italic;
+            color: var(--dark-cave);
+        }
+        
+        footer {
+            background-color: var(--dark-cave);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 2rem auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: var(--earth-brown);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background-color: white;
+            border: 4px solid var(--extinct-red);
+            border-radius: 50%;
+            top: 15px;
+            z-index: 1;
+        }
+        
+        .left {
+            left: 0;
+        }
+        
+        .right {
+            left: 50%;
+        }
+        
+        .left::after {
+            right: -12px;
+        }
+        
+        .right::after {
+            left: -12px;
+        }
+        
+        .timeline-content {
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            border: 1px solid var(--fossil-tan);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        @media screen and (max-width: 768px) {
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item::after {
+                left: 18px;
+            }
+            
+            .right {
+                left: 0;
+            }
+        }
+        
+        .species-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-left: 5px solid var(--extinct-red);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .species-name {
+            color: var(--extinct-red);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .study-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-left: 5px solid var(--earth-brown);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .study-title {
+            color: var(--earth-brown);
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay">
+        <header>
+            <h1>The Late Pleistocene Epoch</h1>
+            <p>126,000 to 11,700 years ago - The Last Ice Age</p>
+        </header>
+        
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="key.html">Key Facts</a>
+            <a href="extinct.html">Extinct Species</a>
+            <a href="studies.html">Studies</a>
+            <a href="about.html">About</a>
+        </nav>
+        
+        <div class="container">
+            <section class="hero">
+                <img src="https://media.proprofs.com/images/QM/user_images/2503852/-Ice-Age-.webp" alt="Pleistocene landscape">
+                <h2>Exploring Earth's Last Great Ice Age</h2>
+            </section>
+            
+            <section class="content-section">
+                <h2>Welcome to the Pleistocene</h2>
+                <p>The Late Pleistocene was a time of dramatic environmental changes, megafauna, and early human migration. This epoch, part of the Quaternary Period, witnessed the last glacial period (often called the "Ice Age") and the subsequent transition to the current Holocene interglacial.</p>
+                <p>During this period, Earth's climate fluctuated between colder glacial periods and warmer interglacials, with massive ice sheets covering much of North America and Eurasia. These environmental changes had profound effects on the evolution and distribution of plants, animals, and early humans.</p>
+                
+                <div class="image-gallery">
+                    <div class="gallery-item">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjIfVh4KkJbVlFk492Bv0o2DY8DwIotQYNsQ&s" alt="Glacial landscape">
+                        <p>Glacial landscapes dominated the Pleistocene</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://encyclopedia.pub/media/common/202503/mceclip0-67cff5e46d2d3.jpg" alt="Mammoth skeleton">
+                        <p>Mammoths were among the iconic megafauna</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://www.sapiens.org/app/uploads/2022/08/06_R_Cro-Magnon-painting_full-1280x857.jpg" alt="Cave painting">
+                        <p>Early humans left behind cave art</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="content-section">
+                <h2>Why Study the Late Pleistocene?</h2>
+                <p>Understanding the Late Pleistocene helps us comprehend:</p>
+                <ul>
+                    <li>How species respond to rapid climate change</li>
+                    <li>The causes and consequences of megafauna extinctions</li>
+                    <li>Human adaptation to extreme environments</li>
+                    <li>The origins of modern ecosystems</li>
+                    <li>Patterns of biodiversity loss and conservation</li>
+                </ul>
+                <p>This period serves as an important analog for understanding current and future climate change scenarios.</p>
+            </section>
+        </div>
+        
+        <footer>
+            <p>&copy; 2025 Late Pleistocene Research Network. All rights reserved.</p>
+            <p>Educational use only. Images from Unsplash.</p>
+        </footer>
+    </div>
+</body>
+</html>

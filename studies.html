@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Late Pleistocene - Studies</title>
+    <style>
+        :root {
+            --earth-brown: #8B4513;
+            --ice-blue: #E6F7FF;
+            --dark-cave: #333333;
+            --fossil-tan: #D2B48C;
+            --extinct-red: #8B0000;
+        }
+        
+        body {
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--ice-blue);
+            color: var(--dark-cave);
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1T-XNp7QXuP117dHB9Yia4Uk_SycO6sJbVQ&s');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+        }
+        
+        .overlay {
+            background-color: rgba(255, 255, 255, 0.85);
+            min-height: 100vh;
+        }
+        
+        header {
+            background-image: url('https://preview.redd.it/a6e7w9g1blv31.png?auto=webp&s=fd6fcbbdf2e39d61e19b791eeb3e104313b35632');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+            border-bottom: 5px solid var(--fossil-tan);
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(139, 69, 19, 0.7);
+            z-index: 0;
+        }
+        
+        header h1, header p {
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+        
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: var(--dark-cave);
+            padding: 0.5rem;
+            flex-wrap: wrap;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            margin: 0 0.5rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            background-color: var(--earth-brown);
+        }
+        
+        nav a:hover {
+            background-color: var(--fossil-tan);
+            color: var(--dark-cave);
+            transform: translateY(-3px);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        
+        .content-section {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            border-left: 5px solid var(--earth-brown);
+        }
+        
+        h2 {
+            color: var(--earth-brown);
+            border-bottom: 2px dashed var(--earth-brown);
+            padding-bottom: 0.5rem;
+        }
+        
+        .image-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .gallery-item {
+            flex: 1 1 300px;
+            max-width: 100%;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 3px solid var(--fossil-tan);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item img:hover {
+            transform: scale(1.05);
+        }
+        
+        .gallery-item p {
+            text-align: center;
+            font-style: italic;
+            color: var(--dark-cave);
+        }
+        
+        footer {
+            background-color: var(--dark-cave);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .study-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-left: 5px solid var(--earth-brown);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .study-title {
+            color: var(--earth-brown);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .methodology {
+            font-style: italic;
+            color: var(--dark-cave);
+            margin: 0.5rem 0;
+        }
+        
+        .findings {
+            background-color: rgba(139, 69, 19, 0.1);
+            padding: 0.8rem;
+            border-radius: 5px;
+            margin-top: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay">
+        <header>
+            <h1>Pleistocene Research Studies</h1>
+            <p>Scientific discoveries about Earth's last Ice Age</p>
+        </header>
+        
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="key.html">Key Facts</a>
+            <a href="extinct.html">Extinct Species</a>
+            <a href="studies.html">Studies</a>
+            <a href="about.html">About</a>
+        </nav>
+        
+        <div class="container">
+            <section class="content-section">
+                <h2>Recent Scientific Studies</h2>
+                <p>The Late Pleistocene continues to be an active area of research across multiple scientific disciplines. Here are some notable studies that have advanced our understanding of this epoch:</p>
+                
+                <div class="study-card">
+                    <div class="study-title">Ancient DNA Analysis of Megafauna Extinctions</div>
+                    <div class="methodology">Genetic sequencing of fossil remains from multiple continents</div>
+                    <div class="findings">
+                        <p>This groundbreaking study analyzed DNA from over 100 megafauna species to determine patterns of genetic diversity before extinction. Findings suggest that many species were already in decline before human arrival, but human hunting pressure accelerated their demise.</p>
+                    </div>
+                </div>
+                
+                <div class="study-card">
+                    <div class="study-title">Ice Core Climate Reconstruction</div>
+                    <div class="methodology">Analysis of oxygen isotopes in Greenland ice cores</div>
+                    <div class="findings">
+                        <p>By examining ice layers dating back 120,000 years, researchers have reconstructed detailed temperature records showing abrupt climate shifts during the Pleistocene. These "Dansgaard-Oeschger events" reveal how quickly climate could change during glacial periods.</p>
+                    </div>
+                </div>
+                
+                <div class="study-card">
+                    <div class="study-title">Human Migration Patterns</div>
+                    <div class="methodology">Archaeological evidence combined with genetic studies</div>
+                    <div class="findings">
+                        <p>Recent discoveries of stone tools and fossil remains have pushed back estimates of when humans first reached North America to at least 20,000 years ago, much earlier than previously thought. Genetic evidence shows multiple waves of migration across Beringia.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="content-section">
+                <h2>Research Methods</h2>
+                <p>Scientists use various techniques to study the Pleistocene:</p>
+                
+                <div class="image-gallery">
+                    <div class="gallery-item">
+                        <img src="https://cdn.britannica.com/21/249321-050-358B4304/researcher-drills-core-samples-sea-ice-Antarctic-New-Zealand.jpg" alt="Ice core drilling">
+                        <p>Ice core sampling provides climate data</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://dailygalaxy.com/wp-content/uploads/2024/12/Prehistoric-Mastodon-1200x727.jpg" alt="Fossil excavation">
+                        <p>Careful fossil excavation reveals past ecosystems</p>
+                    </div>
+                </div>
+                
+                <ul>
+                    <li><strong>Radiocarbon dating:</strong> Determines the age of organic materials up to 50,000 years old</li>
+                    <li><strong>Pollen analysis:</strong> Reveals ancient vegetation patterns</li>
+                    <li><strong>Stable isotope analysis:</strong> Provides information about ancient diets and climates</li>
+                    <li><strong>Geomorphology:</strong> Studies landforms created by glaciers</li>
+                    <li><strong>Ancient DNA:</strong> Extracts genetic material from fossils</li>
+                </ul>
+            </section>
+            
+            <section class="content-section">
+                <h2>Ongoing Research Questions</h2>
+                <div class="study-card">
+                    <div class="study-title">What caused the megafauna extinctions?</div>
+                    <p>The relative roles of climate change versus human hunting pressure remain debated. New evidence suggests both factors interacted differently in various regions.</p>
+                </div>
+                
+                <div class="study-card">
+                    <div class="study-title">How did ecosystems respond to rapid climate changes?</div>
+                    <p>Studies of fossil pollen and plant remains show that species responded individualistically to climate shifts rather than moving together as intact communities.</p>
+                </div>
+                
+                <div class="study-card">
+                    <div class="study-title">What can Pleistocene climate changes tell us about modern global warming?</div>
+                    <p>While past changes were natural, their speed and magnitude provide important context for understanding current anthropogenic climate change.</p>
+                </div>
+            </section>
+        </div>
+        
+        <footer>
+            <p>&copy; 2025 Late Pleistocene Research Network. All rights reserved.</p>
+            <p>Educational use only. Images from Unsplash.</p>
+        </footer>
+    </div>
+</body>
+</html>

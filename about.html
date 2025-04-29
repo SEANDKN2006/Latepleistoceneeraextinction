@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Late Pleistocene</title>
+    <style>
+        :root {
+            --earth-brown: #8B4513;
+            --ice-blue: #E6F7FF;
+            --dark-cave: #333333;
+            --fossil-tan: #D2B48C;
+            --extinct-red: #8B0000;
+        }
+        
+        body {
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--ice-blue);
+            color: var(--dark-cave);
+            background-image: url('https://platform.vox.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/6829605/pub_120_560_102_4K_UniversalColor_WB_rgb.jpg?quality=90&strip=all&crop=9.9855,0,80.029,100');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+        }
+        
+        .overlay {
+            background-color: rgba(255, 255, 255, 0.85);
+            min-height: 100vh;
+        }
+        
+        header {
+            background-image: url('https://supercarblondie.com/wp-content/uploads/image_0a862909.jpeg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+            border-bottom: 5px solid var(--fossil-tan);
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(139, 69, 19, 0.7);
+            z-index: 0;
+        }
+        
+        header h1, header p {
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+        
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: var(--dark-cave);
+            padding: 0.5rem;
+            flex-wrap: wrap;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            margin: 0 0.5rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            background-color: var(--earth-brown);
+        }
+        
+        nav a:hover {
+            background-color: var(--fossil-tan);
+            color: var(--dark-cave);
+            transform: translateY(-3px);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        
+        .content-section {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            border-left: 5px solid var(--earth-brown);
+        }
+        
+        h2 {
+            color: var(--earth-brown);
+            border-bottom: 2px dashed var(--earth-brown);
+            padding-bottom: 0.5rem;
+            text-align: center;
+        }
+        
+        .image-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .gallery-item {
+            flex: 1 1 300px;
+            max-width: 100%;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 3px solid var(--fossil-tan);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item img:hover {
+            transform: scale(1.05);
+        }
+        
+        .gallery-item p {
+            text-align: center;
+            font-style: italic;
+            color: var(--dark-cave);
+        }
+        
+        footer {
+            background-color: var(--dark-cave);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+        
+        /* Instructor Styling */
+        .instructor-card {
+            text-align: center;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem auto;
+            max-width: 600px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-top: 5px solid var(--extinct-red);
+            position: relative;
+        }
+        
+        .instructor-photo {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--fossil-tan);
+            margin: 0 auto 1.5rem;
+            display: block;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .instructor-title {
+            font-size: 1.1rem;
+            color: var(--extinct-red);
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Team Members Styling */
+        .team-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .team-member {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            width: 280px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-top: 3px solid var(--earth-brown);
+        }
+        
+        .team-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--fossil-tan);
+            margin: 0 auto 1rem;
+            display: block;
+        }
+        
+        .member-title {
+            font-style: italic;
+            color: var(--dark-cave);
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .team-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .team-member {
+                width: 100%;
+                max-width: 350px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay">
+        <header>
+            <h1>About Our Team</h1>
+            <p>The creators behind this Pleistocene educational project</p>
+        </header>
+        
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="keyfacts.html">Key Facts</a>
+            <a href="extinctspecies.html">Extinct Species</a>
+            <a href="studies.html">Studies</a>
+            <a href="about.html">About</a>
+        </nav>
+        
+        <div class="container">
+            <section class="content-section">
+                <h2>Our Instructor</h2>
+                
+                <!-- Instructor Card - Centered and Larger -->
+                <div class="instructor-card">
+                    <!-- Replace with actual photo of Rhena Mae Montes -->
+                    <img src="bletxa.jpg" 
+                         alt="Rhena Mae Montes" 
+                         class="instructor-photo">
+                    <h3>Rhena Mae Montes</h3>
+                    <div class="instructor-title">Empowerment Technology Instructor</div>
+                    <p>Guided and mentored students in creating this comprehensive educational website as part of their technology curriculum. Specializes in web development education, digital literacy, and project-based learning.</p>
+                </div>
+                
+                <h2>Our Team Members</h2>
+                
+                <div class="team-grid">
+                    <!-- Student 1 -->
+                    <div class="team-member">
+                        <!-- Replace with actual photo of Sean David Karl Nunez -->
+                        <img src="seantik.jpg" 
+                             alt="Sean David Karl Nunez" 
+                             class="team-photo">
+                        <h3>Sean David Karl Nunez</h3>
+                        <div class="member-title">GRADE 12 STEM, MT. DUVAL</div>
+                        
+                    </div>
+                    
+                    <!-- Student 2 -->
+                    <div class="team-member">
+                        <!-- Replace with actual photo of Rebecca Bacang -->
+                        <img src="rebecs.jpg" 
+                             alt="Rebecca Bacang" 
+                             class="team-photo">
+                        <h3>Rebecca Bacang</h3>
+                        <div class="member-title">GRADE 12 STEM, MT. DUVAL </div>
+                        
+                    </div>
+                </div>
+            </section>
+            
+            <section class="content-section">
+                <h2>Project Details</h2>
+                <p>This educational website was created as part of our Empowerment Technology class to demonstrate:</p>
+                <ul style="max-width: 600px; margin: 0 auto; text-align: left;">
+                    <li>HTML5 and CSS3 web development skills</li>
+                    <li>Responsive design principles</li>
+                    <li>Scientific research and content creation</li>
+                    <li>Digital collaboration and project management</li>
+                </ul>
+                
+                <div style="text-align: center; margin-top: 2rem;">
+                    <p><strong>School:</strong> ROSEMONT HILLS MONTESSORI COLLEGE</p>
+                    <p><strong>Class:</strong> Empowerment Technology</p>
+                    <p><strong>Year:</strong> 2025</p>
+                </div>
+            </section>
+        </div>
+        
+        <footer>
+            <p>&copy; 2025 Late Pleistocene Educational Project. All rights reserved.</p>
+            <p>Created by students under the guidance of Rhena Mae Montes</p>
+        </footer>
+    </div>
+</body>
+</html>

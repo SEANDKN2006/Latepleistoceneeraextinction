@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Late Pleistocene - Key Facts</title>
+    <style>
+        /* Same CSS as index.html */
+        :root {
+            --earth-brown: #8B4513;
+            --ice-blue: #E6F7FF;
+            --dark-cave: #333333;
+            --fossil-tan: #D2B48C;
+            --extinct-red: #8B0000;
+        }
+        
+        body {
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--ice-blue);
+            color: var(--dark-cave);
+            background-image: url('https://images.unsplash.com/photo-1518098268026-4e89f1a2cd8e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+        }
+        
+        .overlay {
+            background-color: rgba(255, 255, 255, 0.85);
+            min-height: 100vh;
+        }
+        
+        header {
+        background-image: url('https://scx2.b-cdn.net/gfx/news/2015/54-researcherst.jpg');
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        color: white;
+        padding: 2rem 1rem;
+        text-align: center;
+        border-bottom: 5px solid var(--fossil-tan);
+    }
+    
+    header::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(139, 69, 19, 0.7); /* earth-brown with transparency */
+        z-index: 0;
+    }
+    
+    header h1, header p {
+        position: relative;
+        z-index: 1;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    }
+        
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: var(--dark-cave);
+            padding: 0.5rem;
+            flex-wrap: wrap;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            margin: 0 0.5rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            background-color: var(--earth-brown);
+        }
+        
+        nav a:hover {
+            background-color: var(--fossil-tan);
+            color: var(--dark-cave);
+            transform: translateY(-3px);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        
+        .content-section {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            border-left: 5px solid var(--earth-brown);
+        }
+        
+        h2 {
+            color: var(--earth-brown);
+            border-bottom: 2px dashed var(--earth-brown);
+            padding-bottom: 0.5rem;
+        }
+        
+        .image-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .gallery-item {
+            flex: 1 1 300px;
+            max-width: 100%;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 3px solid var(--fossil-tan);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item img:hover {
+            transform: scale(1.05);
+        }
+        
+        .gallery-item p {
+            text-align: center;
+            font-style: italic;
+            color: var(--dark-cave);
+        }
+        
+        footer {
+            background-color: var(--dark-cave);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 2rem auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: var(--earth-brown);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background-color: white;
+            border: 4px solid var(--extinct-red);
+            border-radius: 50%;
+            top: 15px;
+            z-index: 1;
+        }
+        
+        .left {
+            left: 0;
+        }
+        
+        .right {
+            left: 50%;
+        }
+        
+        .left::after {
+            right: -12px;
+        }
+        
+        .right::after {
+            left: -12px;
+        }
+        
+        .timeline-content {
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            border: 1px solid var(--fossil-tan);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        @media screen and (max-width: 768px) {
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item::after {
+                left: 18px;
+            }
+            
+            .right {
+                left: 0;
+            }
+        }
+        
+        .fact-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-left: 5px solid var(--earth-brown);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .fact-title {
+            color: var(--earth-brown);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay">
+        <header>
+            <h1>Key Facts About the Late Pleistocene</h1>
+            <p>Essential information about Earth's last Ice Age</p>
+        </header>
+        
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="key.html">Key Facts</a>
+            <a href="extinct.html">Extinct Species</a>
+            <a href="studies.html">Studies</a>
+            <a href="about.html">About</a>
+        </nav>
+        
+        <div class="container">
+            <section class="content-section">
+                <h2>Chronology and Climate</h2>
+                <div class="fact-card">
+                    <div class="fact-title">Time Period</div>
+                    <p>The Late Pleistocene spans from approximately 126,000 to 11,700 years ago, ending with the transition to the Holocene epoch.</p>
+                </div>
+                
+                <div class="fact-card">
+                    <div class="fact-title">Glacial Cycles</div>
+                    <p>The epoch was characterized by repeated glacial cycles (cold periods with extensive ice sheets) and interglacials (warmer periods). The Last Glacial Maximum occurred about 26,500-19,000 years ago.</p>
+                </div>
+                
+                <div class="fact-card">
+                    <div class="fact-title">Sea Levels</div>
+                    <p>During glacial maxima, sea levels were up to 120 meters lower than today, exposing land bridges like Beringia (between Asia and North America) and the Sunda Shelf (in Southeast Asia).</p>
+                </div>
+            </section>
+            
+            <section class="content-section">
+                <h2>Major Events Timeline</h2>
+                <div class="timeline">
+                    <div class="timeline-item left">
+                        <div class="timeline-content">
+                            <h3>126,000 years ago</h3>
+                            <p>Beginning of the Late Pleistocene. Eemian interglacial period (warmer than present).</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item right">
+                        <div class="timeline-content">
+                            <h3>115,000 years ago</h3>
+                            <p>Start of the last glacial period (Würm glaciation in Europe, Wisconsin glaciation in North America).</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item left">
+                        <div class="timeline-content">
+                            <h3>70,000-60,000 years ago</h3>
+                            <p>Modern humans begin migrating out of Africa.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item right">
+                        <div class="timeline-content">
+                            <h3>26,500-19,000 years ago</h3>
+                            <p>Last Glacial Maximum - ice sheets at their greatest extent.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item left">
+                        <div class="timeline-content">
+                            <h3>16,000-13,000 years ago</h3>
+                            <p>Major deglaciation begins. Bering land bridge floods around 11,000 years ago.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item right">
+                        <div class="timeline-content">
+                            <h3>11,700 years ago</h3>
+                            <p>End of Pleistocene, beginning of Holocene epoch.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="content-section">
+                <h2>Environmental Characteristics</h2>
+                <div class="image-gallery">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1512273222628-4daea6e55abb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Ice age landscape">
+                        <p>Glacial landscapes dominated northern continents</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://www.horsetalk.co.nz/wp-content/uploads/2022/01/Pleistocene-scene-featured.jpg" alt="Mammoth steppe">
+                        <p>The mammoth steppe was a vast grassland ecosystem</p>
+                    </div>
+                </div>
+                
+                <div class="fact-card">
+                    <div class="fact-title">Vegetation</div>
+                    <p>Tundra and steppe vegetation dominated northern regions, with forests restricted to refugia. The "mammoth steppe" was an extensive grassland ecosystem supporting megafauna.</p>
+                </div>
+                
+                <div class="fact-card">
+                    <div class="fact-title">Atmosphere</div>
+                    <p>CO₂ levels were around 180-200 ppm during glacial maxima (compared to 280 ppm pre-industrial and 415+ ppm today).</p>
+                </div>
+                
+                <div class="fact-card">
+                    <div class="fact-title">Temperature</div>
+                    <p>Global average temperatures were 4-7°C cooler than today during glacial maxima, with greater cooling at high latitudes.</p>
+                </div>
+            </section>
+        </div>
+        
+        <footer>
+            <p>&copy; 2025 Late Pleistocene Research Network. All rights reserved.</p>
+            <p>Educational use only. Images from Unsplash.</p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Late Pleistocene - Extinct Species</title>
+    <style>
+        /* Same CSS as index.html */
+        :root {
+            --earth-brown: #8B4513;
+            --ice-blue: #E6F7FF;
+            --dark-cave: #333333;
+            --fossil-tan: #D2B48C;
+            --extinct-red: #8B0000;
+        }
+        
+        body {
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--ice-blue);
+            color: var(--dark-cave);
+            background-image: url('https://images.unsplash.com/photo-1518098268026-4e89f1a2cd8e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+        }
+        
+        .overlay {
+            background-color: rgba(255, 255, 255, 0.85);
+            min-height: 100vh;
+        }
+        
+        header {
+        background-image: url('https://daily.jstor.org/wp-content/uploads/2018/05/wooly_mammoths_1050x700.jpg');
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        color: white;
+        padding: 2rem 1rem;
+        text-align: center;
+        border-bottom: 5px solid var(--fossil-tan);
+    }
+    
+    header::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(139, 69, 19, 0.7); /* earth-brown with transparency */
+        z-index: 0;
+    }
+    
+    header h1, header p {
+        position: relative;
+        z-index: 1;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    }
+        
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: var(--dark-cave);
+            padding: 0.5rem;
+            flex-wrap: wrap;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            margin: 0 0.5rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            background-color: var(--earth-brown);
+        }
+        
+        nav a:hover {
+            background-color: var(--fossil-tan);
+            color: var(--dark-cave);
+            transform: translateY(-3px);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        
+        .content-section {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            border-left: 5px solid var(--earth-brown);
+        }
+        
+        h2 {
+            color: var(--earth-brown);
+            border-bottom: 2px dashed var(--earth-brown);
+            padding-bottom: 0.5rem;
+        }
+        
+        .image-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .gallery-item {
+            flex: 1 1 300px;
+            max-width: 100%;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 3px solid var(--fossil-tan);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item img:hover {
+            transform: scale(1.05);
+        }
+        
+        .gallery-item p {
+            text-align: center;
+            font-style: italic;
+            color: var(--dark-cave);
+        }
+        
+        footer {
+            background-color: var(--dark-cave);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .species-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-left: 5px solid var(--extinct-red);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .species-name {
+            color: var(--extinct-red);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .region-tag {
+            display: inline-block;
+            background-color: var(--earth-brown);
+            color: white;
+            padding: 0.2rem 0.5rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin-right: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay">
+        <header>
+            <h1>Extinct Species of the Late Pleistocene</h1>
+            <p>The lost megafauna of the Ice Age</p>
+        </header>
+        
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="key.html">Key Facts</a>
+            <a href="extinct.html">Extinct Species</a>
+            <a href="studies.html">Studies</a>
+            <a href="about.html">About</a>
+        </nav>
+        
+        <div class="container">
+            <section class="content-section">
+                <h2>The Pleistocene Megafauna</h2>
+                <p>The Late Pleistocene witnessed the extinction of many large animals (megafauna) across most continents. These extinctions occurred particularly toward the end of the epoch, between 50,000 and 10,000 years ago. The causes remain debated but likely involved climate change and human hunting pressure.</p>
+                
+                <div class="image-gallery">
+                    <div class="gallery-item">
+                        <img src="https://i.natgeofe.com/n/d0d83ff9-0b6a-4ea3-b35d-4e991849cd2a/wooly-mammoth-nationalgeographic_122644.jpg" alt="Mammoth skeleton">
+                        <p>Woolly mammoths were among the most iconic megafauna</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://i.natgeofe.com/n/f3c7b1c2-ab41-4018-af2a-862d7beb13d1/saber-tooth-giant-og.jpg" alt="Saber-tooth cat">
+                        <p>Saber-toothed cats were formidable predators</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="content-section">
+                <h2>Notable Extinct Species</h2>
+                
+                <div class="species-card">
+                    <div class="species-name">Woolly Mammoth (Mammuthus primigenius)</div>
+                    <div><span class="region-tag">Eurasia</span> <span class="region-tag">North America</span></div>
+                    <p>Adapted to cold with long fur and fat layers. Survived on Wrangel Island until about 4,000 years ago.</p>
+                </div>
+                
+                <div class="species-card">
+                    <div class="species-name">Saber-toothed Cat (Smilodon fatalis)</div>
+                    <div><span class="region-tag">North America</span> <span class="region-tag">South America</span></div>
+                    <p>Powerful predators with elongated canine teeth. Hunted large herbivores like bison and camels.</p>
+                </div>
+                
+                <div class="species-card">
+                    <div class="species-name">Giant Ground Sloth (Megatherium americanum)</div>
+                    <div><span class="region-tag">South America</span></div>
+                    <p>Massive herbivores reaching sizes of elephants. Some species had bony armor.</p>
+                </div>
+                
+                <div class="species-card">
+                    <div class="species-name">Woolly Rhinoceros (Coelodonta antiquitatis)</div>
+                    <div><span class="region-tag">Eurasia</span></div>
+                    <p>Cold-adapted rhinos with thick fur and a flat horn for sweeping snow.</p>
+                </div>
+                
+                <div class="species-card">
+                    <div class="species-name">Irish Elk (Megaloceros giganteus)</div>
+                    <div><span class="region-tag">Eurasia</span></div>
+                    <p>Giant deer with the largest antlers of any known deer species (up to 3.65 m wide).</p>
+                </div>
+                
+                <div class="species-card">
+                    <div class="species-name">Diprotodon</div>
+                    <div><span class="region-tag">Australia</span></div>
+                    <p>Largest known marsupial, about the size of a hippopotamus.</p>
+                </div>
+                
+                <div class="species-card">
+                    <div class="species-name">Short-faced Bear (Arctodus simus)</div>
+                    <div><span class="region-tag">North America</span></div>
+                    <p>One of the largest known terrestrial mammalian carnivores, standing up to 4.6 m tall when upright.</p>
+                </div>
+            </section>
+            
+            <section class="content-section">
+                <h2>Extinction Patterns</h2>
+                <p>The Late Pleistocene extinctions were most severe in the Americas and Australia, where about 80% of large mammal genera disappeared. Africa and southern Asia were less affected, possibly because species there had co-evolved with humans.</p>
+                
+                <div class="image-gallery">
+                    <div class="gallery-item">
+                        <img src="https://cdn.sci.news/images/enlarge12/image_13068e-Megafauna-Extinctions.jpg" alt="Extinction map">
+                        <p>Global patterns of megafauna extinctions</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://img.freepik.com/premium-photo/prehistoric-art-cave-paintings_1314467-70174.jpg" alt="Cave painting of megafauna">
+                        <p>Human cave art preserves images of many extinct species</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <footer>
+            <p>&copy; 2025 Late Pleistocene Research Network. All rights reserved.</p>
+            <p>Educational use only. Images from Unsplash.</p>
+        </footer>
+    </div>
+</body>
+</html>
